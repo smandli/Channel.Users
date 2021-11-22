@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Channel.Users.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "get-users-report"
+    }
+  }
+}
