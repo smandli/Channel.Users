@@ -16,13 +16,15 @@ namespace Channel.Users.Console
             if (args.Length < 1)
                 throw new SystemException("Please provide the command to execute, i.e. get-users-report.");
 
-            switch (args[0])
+            var commandName = args[0];
+
+            switch (commandName)
             {
                 case "get-users-report":
                     await SendGetUsersReportRequest(host.Services);
                     break;
                 default:
-                    throw new ArgumentException("The command name provided is not supported. Try with get-users-report.");
+                    throw new ArgumentException($"The command name {commandName} is not supported. Try with get-users-report.");
             }
 
         }
