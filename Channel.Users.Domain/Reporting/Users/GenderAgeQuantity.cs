@@ -1,4 +1,6 @@
-﻿namespace Channel.Users.Domain.Reporting.Users
+﻿using Channel.Users.Domain.DomainEntities.User;
+
+namespace Channel.Users.Domain.Reporting.Users
 {
     public struct GenderAgeQuantity
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using Channel.Users.Application.Commands;
+using Channel.Users.Application.Commands.Abstractions;
 using Channel.Users.Application.Commands.GetUsersReport;
 using Channel.Users.Domain.Infrastructure;
 using Channel.Users.Domain.Reporting.Users;
@@ -17,8 +17,8 @@ namespace Channel.Users.Application.Infrastructure.DependencyRegistry
         {
             // Commands
             services.AddScoped<ICommandHandler<GetUsersReportRequest, GetUsersReportResponse>, GetUsersReportCommandHandler>();
-            services.AddScoped<IUsersReportingService, UsersReportingService>();
-            services.AddScoped<IUsersReportingDataProvider, UsersReportingHttpDataProvider>();
+            services.AddScoped<IUsersDataAggregationService, UsersDataAggregationService>();
+            services.AddScoped<IUsersDataProvider, UsersHttpDataProvider>();
 
             // Http client
             var retryPolicy = HttpPolicyExtensions.HandleTransientHttpError()

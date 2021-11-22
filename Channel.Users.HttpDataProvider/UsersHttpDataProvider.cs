@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Channel.Users.Domain.DomainEntities.User;
 using Channel.Users.Domain.Infrastructure;
 using Channel.Users.Domain.Reporting.Users;
 using Microsoft.Extensions.Logging;
@@ -11,13 +12,13 @@ using Newtonsoft.Json;
 
 namespace Channel.Users.HttpDataProvider
 {
-    public class UsersReportingHttpDataProvider : IUsersReportingDataProvider
+    public class UsersHttpDataProvider : IUsersDataProvider
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ILogger<UsersReportingHttpDataProvider> _logger;
+        private readonly ILogger<UsersHttpDataProvider> _logger;
         private readonly HttpDataProviderSettings _settings;
 
-        public UsersReportingHttpDataProvider(IHttpClientFactory httpClientFactory, ILogger<UsersReportingHttpDataProvider> logger,
+        public UsersHttpDataProvider(IHttpClientFactory httpClientFactory, ILogger<UsersHttpDataProvider> logger,
             IOptions<HttpDataProviderSettings> settings)
         {
             _httpClientFactory = httpClientFactory;

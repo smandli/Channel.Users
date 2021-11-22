@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Channel.Users.Domain.DomainEntities.User;
 using Channel.Users.Domain.Reporting.Users;
 using Xunit;
 
@@ -25,7 +26,7 @@ namespace Channel.Users.Domain.Tests
         [Fact]
         public void GetUsersById_TwoUsersWithThatId_BothAreReturned()
         {
-            var reportingService = new UsersReportingService();
+            var reportingService = new UsersDataAggregationService();
 
             var filteredUsers = reportingService.GetUsersById(_users, 30);
 
@@ -37,7 +38,7 @@ namespace Channel.Users.Domain.Tests
         [Fact]
         public void GetUsersCountByAgeAndGender()
         {
-            var reportingService = new UsersReportingService();
+            var reportingService = new UsersDataAggregationService();
 
             var filteredUsers = reportingService.GetUsersCountByAgeAndGender(_users);
 

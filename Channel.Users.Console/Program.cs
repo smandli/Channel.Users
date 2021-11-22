@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Channel.Users.Application.Commands;
+using Channel.Users.Application.Commands.Abstractions;
 using Channel.Users.Application.Commands.GetUsersReport;
 using Microsoft.Extensions.DependencyInjection;
 

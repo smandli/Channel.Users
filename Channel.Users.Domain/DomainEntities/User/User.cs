@@ -1,5 +1,5 @@
 ﻿
-namespace Channel.Users.Domain.Reporting.Users
+namespace Channel.Users.Domain.DomainEntities.User
 {
     public class User
     {
