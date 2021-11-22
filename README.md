@@ -9,6 +9,15 @@
 - Channel.Users.HttpDataProvider: User data provider. This could be replaced by other data sources (dbs, files, etc)
 - Channel.Users.Domain.Tests: Unit tests. Only a couple added for demostration purposes and lack of time.
 
+### Improvements
+
+These are the things that can be done with a bit more of time:
+
+- Handling of downtimes in the Users data source: Depending how critical is to display results even if
+they are stale, consider maintaining a locally cached version (either in memory, redis, file storage, db) to 
+fall back to.
+- 
+
 ### Running the application
 
 Go to the \Channel.Users.Console directory and run the following: 
@@ -18,3 +27,4 @@ dotnet run get-users-report
 ```
 
 That will build and run the console application.
+

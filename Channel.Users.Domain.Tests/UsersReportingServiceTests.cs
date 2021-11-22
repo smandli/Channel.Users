@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Channel.Users.Domain.DomainEntities.User;
 using Channel.Users.Domain.Reporting.Users;
@@ -28,9 +26,9 @@ namespace Channel.Users.Domain.Tests
         {
             var reportingService = new UsersDataAggregationService();
 
-            var filteredUsers = reportingService.GetUsersById(_users, 30);
+            var filteredUsers = reportingService.GetUsersById(_users, 30).ToList();
 
-            Assert.Equal(2, filteredUsers.Count);
+            Assert.Equal(2, filteredUsers.Count());
             Assert.True(filteredUsers.Any(x => x.First == "Paul") == true);
 
         }
